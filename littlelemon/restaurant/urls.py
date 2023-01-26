@@ -11,6 +11,5 @@ app_name = 'restaurant'
 urlpatterns = [
     path('menu-items/', views.MenuItemListCreateView.as_view(), name="menu"),
     path('menu-items/<int:pk>', views.MenuItemRetrieveUpdateDestroyView.as_view(), name="menu-item"),
-    path('', views.home, name="home"),
-    path('restaurant/booking/', include(router.urls)),
+    path('booking/', include(router.urls)),
 ]
