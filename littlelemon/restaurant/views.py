@@ -1,11 +1,15 @@
 from django.shortcuts import render
 from rest_framework import viewsets, permissions, generics
 
+
 # Create your views here.
-from django.http import HttpResponse
 
 from .models import Booking, MenuItem
 from .serializers import BookingSerializer, MenuItemSerializer
+
+def home(request):
+    return render(request, 'index.html')
+
 
 class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
